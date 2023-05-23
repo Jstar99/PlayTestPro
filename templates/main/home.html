@@ -1,0 +1,168 @@
+{% extends 'base.html' %}
+
+{% block title %}PlayTestPro{% endblock %}
+
+{% block content %}
+<section class="section-1">
+    <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
+        <!-- <img src="https://cdn.discordapp.com/attachments/1078781434065596496/1098366032948772874/Project_70-02-removebg-preview.png" class="img-fluid animated"> -->
+        <img src="https://media.discordapp.net/attachments/1078781434065596496/1102382097840209970/group-of-people-of-various-races-are-holding-speech-bubbles-customer-feedback-testimonial-online-survey-communication-speech-chat-social-network-dialogue-user-satisfaction-flat-illustration-vector-rem.png" class="HeroImg">
+        <!-- <img src="https://bootstrapmade.com/demo/templates/HeroBiz/assets/img/hero-carousel/hero-carousel-3.svg" class="HeroImg"> -->
+        <h1>Welcome to <span><b>PlayTestPro!</b></span></h1>
+        
+        <p>Building better software together! join us as we simplify the development process by taking the guess work out of building products.</p>  
+        <button class="scroll-button" onclick="scrollToSection()">Learn More</button>
+    </div>
+</section>
+
+<section class="section-2" id="section-2">
+  <div class="container" style="display: flex; align-items: center;">
+    <div class="content" style="flex: 1; padding-right: 20px;">
+      <h2><b>Who we are</b></h2>
+      <p>We are a company of developers who have seen and experienced first-hand the struggles of finding a significant number of willing participants to provide feedback on our projects. We found that current solutions were just not accommodating to early-stage developers/products, leading us to the conclusion that there must be a better way.</p>
+    </div>
+    <div class="image">
+      <img src="https://media.discordapp.net/attachments/1078781434065596496/1098366032948772874/Project_70-02-removebg-preview.png" alt="Image">
+    </div>
+  </div>
+
+  <div class="container" style="display: flex; align-items: center;">
+    <div class="image" style="flex: 1; padding-right: 20px;">
+      <img src="https://media.discordapp.net/attachments/1078781434065596496/1110308443400699925/Project_73-03-removebg-preview.png" alt="Image">
+    </div>
+    <div class="content" style="flex: 1;" >
+      <h2><b>What we do</b></h2>
+      <p>Our goal and mission are to arm developers at any stage of their software cycle with the tools and information necessary to build the best version of their product.</p>
+    </div>
+  </div>
+  
+</section>
+
+<section class="section-3" id="section-3">
+  <h1 style="margin-left: 40%;"><b>How it works</b></h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://cdn.discordapp.com/attachments/1078781434065596496/1103753961305034792/online-registration-or-sign-up-login-for-account-on-smartphone-app-user-interface-with-secure-password-mobile-application-for-ui-web-banner-access-cartoon-people-illustration-vector-removebg-preview.png" alt="" class="hImg">
+          <div class="card-header bg-dark">Step 1: Sign Up</div>
+          <div class="card-body">
+            <p>Create an account on our site by filling out a simple form. We'll ask for some basic information to get you started whether you are a developer or tester.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://cdn.discordapp.com/attachments/1078781434065596496/1103755420738256936/customer-reviews-rating-different-people-give-a-review-rating-and-feedback-support-for-business-satisfaction-flat-illustration-vector-removebg-preview.png" alt="" class="hImg">
+          <div class="card-header bg-dark">Step 2: Pick an App</div>
+          <div class="card-body">
+            <p>Browse our list of available games and apps that are available for feedback. We'll provide you with instructions on how to download and install the app.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://cdn.discordapp.com/attachments/1078781434065596496/1103753496727130112/passive-income-internet-salary-earning-money-concept-woman-getting-paid-from-online-work-outline-design-style-minimal-illustration-for-landing-page-web-banner-infographics-hero-images-vecto-removebg-p.png" alt="" class="hImg">
+          <div class="card-header bg-dark">Step 3: Give Feedback</div>
+          <div class="card-body">
+            <p>Use the selected app for a few minutes and provide us with your honest feedback. We'll ask you some questions about your experience and provide you with a rating system to help us evaluate the app after which you will be rewarded with an incentive.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+      <button class="scroll-button"><a href="/registration/signup" style="text-decoration: none; color: white;" > Start Earning Here </a></button>
+  </div>
+</section>
+
+<section class="section-4">
+  <h1 style="padding-left: 40%; margin-top: 10px;"><b>Are you a developer?</b></h1>
+  <p style="margin-left: 20px; margin-top: 4%;">Whether you're a <b>Game Developer</b>, <b>App Developer</b> or working on an exciting new <b>Startup</b> we would love to hear from you and help take your project to the next level. You can contact us here:</p>
+  <p style="margin-left: 40%;"><b>PlayTestPro@gmail.com / +1 (876)866-3722</b></p>
+</section>
+
+<script>
+  function scrollToSection() {
+      var section = document.getElementById("section-3");
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+</script>
+
+
+<style>
+  .scroll-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+  .hImg{
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .hImg:hover {
+			transform: scale(1.2);
+		}
+
+  .card{
+    width: 70%;
+    margin-top:10%;
+  }
+  
+  .card-header {
+    /* background-color: black; */
+  color: white;
+}
+
+.card-body{
+  background-color: rgb(223, 223, 223);
+}
+
+.section-1 {
+  height: 700px;
+  /* background-color: ; */
+}
+
+.section-2 {
+  height: 1000px;
+  background-color: white;
+}
+
+.section-3 {
+  height: 800px;
+  background-color: #eee;
+}
+
+.section-4 {
+  height: 350px;
+  background-color: white;
+}
+
+p{
+  font-size: 20px;
+}
+
+.HeroImg {
+  position: relative;
+  animation: float-up-down 3s ease-in-out infinite;
+}
+
+@keyframes float-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+</style>
+{% endblock %}

@@ -1,0 +1,275 @@
+{% extends 'base.html' %}
+
+{% block title %}PlayTestPro | Projects{% endblock %}
+
+
+
+{% block content %}
+
+<h1>Project List</h1>
+
+{% if project_list %}
+<div class="container mx-auto mt-4">
+  <div class="row">
+    {% for project in project_list %}
+    <div class="col-md-3" id="cardcontainer">
+        <div class="card">
+        <div class="text-warning bg-dark" style="position: absolute; padding: 0.5rem ; height: 28px; width: 100px; text-align: center; top: 11px; right: -14px;">{{project.max_user_num}} pts</div>
+        <div class="slide slide1 ">
+          <div class="content">
+            <div class="icon" src="{{project.project_screenshot.url}}">
+              <i class="fa fa-user-circle" aria-hidden="true"></i>
+                <img src="{{project.project_screenshot.url}}" class="card-img-top" style="height: 230px;">  
+              </div>
+            </div>
+          </div>
+      1681
+          
+        <div class="slide slide2">
+        <div class="content">
+          <h5 class="card-title">{{project.project_name}}</h5>
+          <p class="pDetails">{{project.project_details}}</p>
+          <a href="/{{project.project_name}}/" class="btn btn-outline-dark" id="fBtn"><b> Give FeedBack</b></a>
+          <!-- <p class="userNum"><b>{{project.user_num}} / {{project.max_user_num}}</b></p> -->
+        </div>
+        </div>
+      </div>
+    </div>
+      {% endfor %}
+      {% endif %}
+<style>
+
+  /* .card::after{
+    position: absolute;
+    padding: 0.5rem;
+    height: 28px;
+    width: 100px;
+    text-align: center;
+    top: 11px;
+    right: -14px;
+  }
+
+
+  .card::before{
+  position: absolute;
+  content: '';
+  background: #1f1f1f;
+  height: 28px;
+  width: 28px;
+  top:1.5rem;
+  right:-0.5rem;
+  transform : rotate(45deg);
+} */
+
+
+  .points{
+    color: red;
+  }
+
+  .card {
+    opacity: 0;
+  }
+
+
+  @keyframes fade-in {
+    form{
+      opacity: 0;
+    }
+
+    to{
+      opacity: 1;
+    }
+  }
+
+
+  .userNum {
+          margin-left: 100px;
+          margin-top: 30px;
+          color: white;
+        }
+
+  #fBtn {
+          margin-left: 60px;
+      }
+  
+  
+  .container .card .icon {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: #545557;
+
+  }
+
+  .container .card .icon .fa {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 80px;
+
+  color: #fff;
+
+  }
+
+  .container .card .slide {
+
+  width: 300px;
+
+  height: 200px;
+
+  transition: 0.5s;
+
+  }
+
+.container .card .slide.slide1 {
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 1;
+
+  transition: .7s;
+
+  transform: translateY(100px);
+
+}
+
+.container .card:hover .slide.slide1{
+
+  transform: translateY(0px);
+
+}
+
+.container .card .slide.slide2 {
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  transition: .8s;
+
+  transform: translateY(-100px);
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.container .card:hover .slide.slide2{
+
+transform: translateY(0);
+
+}
+
+.container .card .slide.slide2::after{
+
+  content: " ";
+
+  position: absolute;
+
+  width: 30px;
+
+  height: 4px;
+
+  bottom: 15px;
+
+  left: 50%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: #303030;
+}
+
+.container .card .slide.slide2 .content p {
+  margin: 0;
+
+  padding: 0;
+
+  text-align: center;
+
+  color: #414141;
+}
+
+.container .card .slide.slide2 .content h3 {
+  margin: 0 0 10px 0;
+
+  padding: 0;
+
+  font-size: 24px;
+
+  text-align: center;
+
+  color: #414141;
+}
+</style>
+
+<script>
+  window.addEventListener('load', function() {
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach((card, index) => {
+    // Add a unique class to each card based on its position in the DOM
+    card.classList.add(`card-${index}`);  
+
+    // Apply the fade-in effect to each card with a delay based on its position
+    const delay = index * 300; // Change the delay as needed
+    card.style.animation = `fade-in 1s ease ${delay}ms forwards`;
+  });
+});
+
+</script>
+{% endblock %}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25z%</div>
+      </div> -->
+
+<!-- <div class="row">
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src= alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{project.project_name}}</h5>
+      <p class="card-text">{{ project.project_details }}</p>
+      <a href="#" class="btn btn-primary">Give FeedBack</a>
+    </div>
+  </div> 
+</div> -->

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+<head>
+	{% block title %}Project Upload{% endblock %}
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+
+{% block content %}
+<h1>Upload Page</h1>
+<form style="width: 700px;">
+	<!-- 2 column grid layout with text inputs for the first and last names -->
+	<div class="row mb-4">
+	  <div class="col">
+		<div class="form-outline">
+		  <input type="text" id="form6Example1" class="form-control" />
+		  <label class="form-label" for="form6Example1">Project Name</label>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Text input -->
+	<div class="form-outline mb-4">
+		<input type="text" id="form6Example3" class="form-control" />
+		<label class="form-label" for="form6Example3">Company name</label>
+	</div> 
+	
+	<!-- Message input -->
+	<div class="form-outline mb-4">
+	  <textarea class="form-control" id="form6Example7" rows="4"></textarea>
+	  <label class="form-label" for="form6Example7">Project Details</label>
+	</div>
+	
+	<div class="form-outline mb-4">
+		Project Stage
+		<select class="select" >
+			<option value="1">Pre-Alpha</option>
+			<option value="2">Alpha</option>
+			<option value="3">Beta</option>
+			<option value="4">Release</option>
+		  </select>
+	</div>
+
+	<div class="form-outline mb-4">
+		Project Screenshot
+		<input type="file" accept="image/*" onchange="loadFile(event)"> 
+		<img id="output"/>
+	<script>
+  		var loadFile = function(event) {
+    	var output = document.getElementById('output');
+    	output.src = URL.createObjectURL(event.target.files[0]);
+    	output.onload = function() {
+      	URL.revokeObjectURL(output.src) // free memory
+    	}
+  	};
+	</script>
+	</div>
+
+	<div class="form-outline mb-4">
+		Project Zip File
+		<input type="file" id="projectFile" accept="video/*">
+	</div>
+
+
+	<!-- Submit button -->
+	<button type="submit" class="btn btn-primary btn-block mb-4">Submit Project</button>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{% endblock %}
+
+
+
+<!-- >Upload Software
+	-Upload project for feedback  (zip file)
+	-Details about the project
+	-Scan for viruses 	
+	-what stage of the project 
+	-What would you like feedback on specifically: everything, UI, Feel, Balance etc...
+	-Would you like to add a question / poll 
+	-Dev estimates how long a feedback round will take
+	-Feedback packages: 20 - 50 = $50 | 70 -100 = $100  |  100 - 150  = $150  |  200 - 250 | 400 - 500 |  >1000 
+	-Aditional Insight: pay to get more data ~$10 ?
+	-Screenshot of the software
+-->
